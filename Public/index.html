@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Add Excel to Database</title>
+     <!-- Adding stylesheet -->
+     <link rel="stylesheet" href="style.css">
+
+</head>
+</head>
+
+<body>
+     <div class="header">
+          <h3>Add from Excel</h3>
+     </div>
+     <div class="container1">
+          <p>Add Candidates to Database</p>
+     </div>
+     <div class="container2">
+          <form id="uploadForm" enctype="multipart/form-data" action="upload" method="post">
+               <label for="file"> <img id="upload-img" src="upload-solid.jpg"></label>
+               <p id="response1">Thank You!</p>
+               <br>
+               <br>
+               <input id="file" type="file" name="file" onchange="getName(this.value)" required />
+               <p id="response2">File Succesfully Uploaded.</p>
+               <br>
+               <br>
+               <p id="response3">Your Record will be processed shortly.</p>
+               <input id="submit-btn" type="submit" value="Submit" name="submit" onclick="newData()">
+          </form>
+     </div>
+     <script>
+          function newData() {
+               let upload = document.querySelector("#upload-img");
+               let file = document.querySelector("#file");
+               let submit = document.querySelector("#submit-btn");
+               let response1 = document.querySelector("#response1");
+               let response2 = document.querySelector("#response2");
+               let response3 = document.querySelector("#response3");
+
+               upload.style.display = 'none';
+               file.style.display = 'none';
+               submit.style.display = 'none';
+
+               response1.style.display = 'inline';
+               response2.style.display = 'inline';
+               response3.style.display = 'inline';
+          }
+
+     </script>
+</body>
+
+</html>
